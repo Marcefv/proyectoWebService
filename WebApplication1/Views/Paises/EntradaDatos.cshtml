@@ -3,6 +3,46 @@
     ViewBag.Title = "EntradaDatos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<br />
+<br />
+<h2 class="col-xs-offset-5">Entrada de datos</h2>
 
-<h2>EntradaDatos</h2>
+<div class="container">
+    <form action="SalidaDatos" method="post">
+        <div class="form-group">
+            <div class="row">
+                <h3>Buscar países por:</h3>
+                <br />
+                <h4>Seleccione el filtro de búsqueda</h4>
+                <div class="col-sm-8">
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" value="Region" checked>Región</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" value="Nombre">Nombre</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" value="Lenguaje">Lenguaje</label>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Buscar país..." name="buscar" required>
+                        <span class="input-group-btn">
+                            <button class="btn btn-info" type="submit">
+                                <span class="glyphicon glyphicon-search">
+                                </span> Buscar
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+</div>
 
