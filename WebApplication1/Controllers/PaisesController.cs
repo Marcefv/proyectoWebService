@@ -30,16 +30,29 @@ namespace WebApplication1.Controllers
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 HttpResponseMessage Res = null;
+                String buscar= form["buscar"];
                 switch (form["optradio"])
+                   
                 {
                     case "Region":
-                       Res = await client.GetAsync("region/"+ form["buscar"]);
+                        if (buscar.Equals("America") || buscar.Equals("america"))
+                        {
+                            buscar = "Americas";
+                        }
+                       Res = await client.GetAsync("region/"+ buscar);
                         break;
                     case "Nombre":
-                       Res = await client.GetAsync("name/" + form["buscar"]);
+                       Res = await client.GetAsync("name/" + buscar);
                         break;
                     case "Lenguaje":
-                       Res = await client.GetAsync("lang/" + form["buscar"]);
+                        if (buscar.Equals("español") || buscar.Equals("Español"))
+                        {
+                            buscar = "es";
+                        }else if (buscar.Equals("Ingles") || buscar.Equals("ingles"))
+                        {
+                            buscar = "en";
+                        }
+                        Res = await client.GetAsync("lang/" + buscar);
                         break;
                     default:
                         break;
