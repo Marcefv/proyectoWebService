@@ -39,6 +39,10 @@ namespace WebApplication1.Controllers
                         {
                             buscar = "Americas";
                         }
+                        else if (buscar.Equals("Europa") || buscar.Equals("europa"))
+                        {
+                            buscar = "Europe";
+                        }
                        Res = await client.GetAsync("region/"+ buscar);
                         break;
                     case "Nombre":
@@ -48,9 +52,37 @@ namespace WebApplication1.Controllers
                         if (buscar.Equals("español") || buscar.Equals("Español"))
                         {
                             buscar = "es";
-                        }else if (buscar.Equals("Ingles") || buscar.Equals("ingles"))
+                        }else if (buscar.Equals("Inglés") || buscar.Equals("ingles") || buscar.Equals("inglés") || buscar.Equals("Ingles"))
                         {
                             buscar = "en";
+                        }
+                        else if (buscar.Equals("Alemán") || buscar.Equals("alemán") || buscar.Equals("Aleman") || buscar.Equals("aleman"))
+                        {
+                            buscar = "de";
+                        }
+                        else if (buscar.Equals("Francés") || buscar.Equals("francés") || buscar.Equals("Frances") || buscar.Equals("frances"))
+                        {
+                            buscar = "fr";
+                        }
+                        else if (buscar.Equals("Italiano") || buscar.Equals("italiano"))
+                        {
+                            buscar = "it";
+                        }
+                        else if (buscar.Equals("Portugués") || buscar.Equals("portugués") || buscar.Equals("Portugues") || buscar.Equals("portugues"))
+                        {
+                            buscar = "pt";
+                        }
+                        else if (buscar.Equals("Japonés") || buscar.Equals("japonés") || buscar.Equals("Japones") || buscar.Equals("japones"))
+                        {
+                            buscar = "ja";
+                        }
+                        else if (buscar.Equals("Chino") || buscar.Equals("chino"))
+                        {
+                            buscar = "zh";
+                        }
+                        else if (buscar.Equals("Ruso") || buscar.Equals("ruso"))
+                        {
+                            buscar = "ru";
                         }
                         Res = await client.GetAsync("lang/" + buscar);
                         break;

@@ -4,5 +4,43 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Diferencias</h2>
+<h2>Diferencias entre WCF y Web Service</h2>
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
 
+    h2 {
+        text-align: center;
+    }
+</style>
+<table style="width:100%">
+    <tr>
+        <th>WCF</th>
+        <th>WS</th>
+    </tr>
+    <tr>
+        <td>
+            Windows Comunication Form puede ser considerado como un framework basado y construido desde
+            cero con el proposito de comunicar diferentes end points, sin importar el protocolo de transferencia de datos.
+        </td>
+        <td>
+            Los WS por otra parte consisten en un concepto mas abstracto que se le atribuye a cualquier servicio
+            que permita una comunicacion eficaz con el cliente para la transferencia de informacion sin importar
+            el dispositivo, sistema operativo o lenguaje, ya que la transferencia de informacion es realizada mediante
+            ASMX o JSON.
+        </td>
+    </tr>
+    <tr>
+        <td>Permite y soporta la comunicacion peer to peer con los protocolos de HTTP,HTTPS,TCP,Pipes y MSMQ</td>
+        <td>Permite solamente la transferencia mediante protocolos de HTTP y HTTPS, que si bien son bastante comunes, no abarcan todo el espectro de comunicacion peer to peer para la solicitud de informacion. </td>
+    </tr>
+    <tr>
+        <td>Permite una mayor velocidad en los requests debido a que soporta multiples conexiones a la vez</td>
+        <td>No permiten conexiones multiples, lo que los hace mas lentos que los WCF en general</td>
+    </tr>
+    <tr>
+        <td>Presenta una mayor seguridad en la conexion con el cliente, o entre endpoints</td>
+        <td>Normalmente requiere de una autenticacion(basic, Oauth, SSL, cookies, etc) para establecer una conexion con el cliente, lo que lo hace mas inseguro que el WCF y en general mas tedioso</td>
+    </tr>
+</table>
